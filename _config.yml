@@ -1,2 +1,8 @@
-theme: jekyll-theme-minimal
-title: Unbowed Suite
+title: Unbowed Wiki
+theme: just-the-docs
+remote_theme: just-the-docs/just-the-docs
+url: "https://bloodvoyage.github.io/unbowed-wiki"
+
+color_scheme: light
+search_enabled: true
+aux_links: {}
