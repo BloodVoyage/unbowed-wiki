@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unbowed Wiki</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            display: flex;
+            background-color: #ffffff;
+            color: #1a1a1a;
+            min-height: 100vh;
+        }
+        /* Sidebar lateral fija */
+        .sidebar {
+            width: 260px;
+            background-color: #f6f8fa;
+            border-right: 1px solid #e1e4e8;
+            padding: 24px 16px;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            overflow-y: auto;
+        }
+        .sidebar h2 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #000;
+        }
+        .sidebar .section-title {
+            font-size: 11px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #6a737d;
+            margin-top: 16px;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+        }
+        .sidebar ul {
+            list-style: none;
+        }
+        .sidebar li {
+            margin-bottom: 4px;
+        }
+        .sidebar a {
+            color: #24292e;
+            text-decoration: none;
+            font-size: 14px;
+            display: block;
+            padding: 6px 10px;
+            border-radius: 6px;
+        }
+        .sidebar a:hover, .sidebar a.active {
+            background-color: #e1e4e8;
+            font-weight: 600;
+        }
+        /* Contenido principal */
+        .main-content {
+            margin-left: 260px;
+            padding: 40px 60px;
+            max-width: 900px;
+            width: 100%;
+        }
+        h1 {
+            font-size: 32px;
+            border-bottom: 1px solid #e1e4e8;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        h2 {
+            font-size: 22px;
+            margin-top: 30px;
+            margin-bottom: 12px;
+            border-bottom: 1px solid #e1e4e8;
+            padding-bottom: 6px;
+        }
+        p {
+            line-height: 1.6;
+            margin-bottom: 16px;
+            color: #24292e;
+        }
+        ul, ol {
+            margin-bottom: 16px;
+            padding-left: 24px;
+            line-height: 1.6;
+        }
+        li {
+            margin-bottom: 6px;
+        }
+        hr {
+            border: 0;
+            border-top: 1px solid #e1e4e8;
+            margin: 24px 0;
+        }
+        a {
+            color: #0366d6;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Menú Lateral -->
+    <nav class="sidebar">
+        <h2>Unbowed Wiki</h2>
+        
+        <div class="section-title">General</div>
+        <ul>
+            <li><a href="#" class="active">Overview</a></li>
+            <li><a href="#requirements">Core Requirements</a></li>
+            <li><a href="#installation">Installation Guide</a></li>
+        </ul>
+
+        <div class="section-title">Archetype Catalog</div>
+        <ul>
+            <li><a href="#unbowed-1">Unbowed I: Dunmer</a></li>
+            <li><a href="#">Unbowed II (Coming Soon)</a></li>
+        </ul>
+    </nav>
+
+    <!-- Contenido Central -->
+    <main class="main-content">
+        <h1>Unbowed Wiki</h1>
+        <p>Welcome to the official documentation and distribution catalog for the <strong>Unbowed Series</strong> dialogue overhauls.</p>
+
+        <hr>
+
+        <h2 id="requirements">📋 Core Requirements</h2>
+        <ul>
+            <li><strong>Skyrim Special Edition</strong> (v1.5.97 / v1.6+)</li>
+            <li><strong>SKSE64</strong></li>
+            <li><strong>SkyUI</strong></li>
+            <li><strong>Unbowed MCM Core Utility</strong> <em>(Available on Nexus Mods)</em></li>
+        </ul>
+
+        <h2 id="unbowed-1">🗂️ Archetype Catalog</h2>
+        <p>Select an archetype below to review its details and access direct download links:</p>
+        <ul>
+            <li>
+                <strong>Unbowed I: Dunmer Dialogue Overhaul</strong>
+                <ul>
+                    <li><em>Status:</em> Released</li>
+                    <li><em>Download:</em> <a href="TU_ENLACE_DE_GOOGLE_DRIVE" target="_blank">Google Drive Folder</a></li>
+                </ul>
+            </li>
+        </ul>
+
+        <h2 id="installation">🛠️ Installation Guide</h2>
+        <ol>
+            <li>Download and install the <strong>Unbowed MCM Core Utility</strong> from Nexus Mods using your mod manager (MO2 / Vortex).</li>
+            <li>Download the desired archetype <code>.7z</code> package from the catalog link above.</li>
+            <li>Install the <code>.7z</code> package as a normal mod in your mod manager and enable it.</li>
+        </ol>
+    </main>
+
+</body>
+</html>
