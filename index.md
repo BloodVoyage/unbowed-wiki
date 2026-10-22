@@ -1,6 +1,6 @@
-# Unbowed Suite
+# Unbowed Wiki
 
-Welcome to the official documentation for the **Unbowed** dialogue overhaul suite.
+Welcome to the official documentation and distribution catalog for the **Unbowed Series** dialogue overhauls.
 
 ---
 
