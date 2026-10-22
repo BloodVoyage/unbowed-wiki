@@ -1,4 +1,3 @@
-# unbowed-wiki
 ---
 layout: default
 title: Home
