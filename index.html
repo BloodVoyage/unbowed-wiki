@@ -10,6 +10,9 @@
             margin: 0;
             padding: 0;
         }
+        html {
+            scroll-behavior: smooth;
+        }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             display: flex;
@@ -17,7 +20,8 @@
             color: #1a1a1a;
             min-height: 100vh;
         }
-        /* Sidebar lateral fija */
+
+        /* --- SIDEBAR --- */
         .sidebar {
             width: 260px;
             background-color: #f6f8fa;
@@ -33,13 +37,16 @@
             font-size: 18px;
             margin-bottom: 20px;
             color: #000;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
         .sidebar .section-title {
             font-size: 11px;
             font-weight: bold;
             text-transform: uppercase;
             color: #6a737d;
-            margin-top: 16px;
+            margin-top: 20px;
             margin-bottom: 8px;
             letter-spacing: 0.5px;
         }
@@ -56,16 +63,18 @@
             display: block;
             padding: 6px 10px;
             border-radius: 6px;
+            transition: background-color 0.15s ease;
         }
         .sidebar a:hover, .sidebar a.active {
             background-color: #e1e4e8;
             font-weight: 600;
         }
-        /* Contenido principal */
+
+        /* --- MAIN CONTENT --- */
         .main-content {
             margin-left: 260px;
             padding: 40px 60px;
-            max-width: 900px;
+            max-width: 960px;
             width: 100%;
         }
         h1 {
@@ -76,8 +85,8 @@
         }
         h2 {
             font-size: 22px;
-            margin-top: 30px;
-            margin-bottom: 12px;
+            margin-top: 36px;
+            margin-bottom: 14px;
             border-bottom: 1px solid #e1e4e8;
             padding-bottom: 6px;
         }
@@ -97,7 +106,7 @@
         hr {
             border: 0;
             border-top: 1px solid #e1e4e8;
-            margin: 24px 0;
+            margin: 28px 0;
         }
         a {
             color: #0366d6;
@@ -106,60 +115,181 @@
         a:hover {
             text-decoration: underline;
         }
+        code {
+            background-color: #f6f8fa;
+            border: 1px solid #e1e4e8;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+            font-size: 85%;
+        }
+
+        /* --- BADGES & STATUS --- */
+        .badge {
+            display: inline-block;
+            padding: 2px 8px;
+            font-size: 12px;
+            font-weight: 600;
+            border-radius: 12px;
+            text-transform: uppercase;
+        }
+        .badge-released {
+            background-color: #dafbe1;
+            color: #1a7f37;
+        }
+        .badge-soon {
+            background-color: #fff8c5;
+            color: #9a6700;
+        }
+
+        /* --- CALLOUT BOXES --- */
+        .callout {
+            padding: 14px 18px;
+            border-left: 4px solid;
+            border-radius: 0 6px 6px 0;
+            margin-bottom: 20px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        .callout-info {
+            background-color: #ddf4ff;
+            border-color: #54aef0;
+            color: #0969da;
+        }
+        .callout-warning {
+            background-color: #fff8c5;
+            border-color: #d4a72c;
+            color: #7d4e00;
+        }
+        .callout p {
+            margin-bottom: 0;
+            color: inherit;
+        }
+
+        /* --- TABLES --- */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 24px;
+            font-size: 14px;
+        }
+        th, td {
+            padding: 10px 12px;
+            border: 1px solid #e1e4e8;
+            text-align: left;
+        }
+        th {
+            background-color: #f6f8fa;
+            font-weight: 600;
+        }
+        tr:nth-child(even) {
+            background-color: #fafbfc;
+        }
+
+        /* --- RESPONSIVE FOR MOBILE --- */
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+            }
+            .sidebar {
+                position: relative;
+                width: 100%;
+                border-right: none;
+                border-bottom: 1px solid #e1e4e8;
+            }
+            .main-content {
+                margin-left: 0;
+                padding: 24px 20px;
+            }
+        }
     </style>
 </head>
 <body>
 
-    <!-- Menú Lateral -->
+    <!-- BARRA LATERAL -->
     <nav class="sidebar">
-        <h2>Unbowed Wiki</h2>
+        <h2>🗡️ Unbowed Wiki</h2>
         
         <div class="section-title">General</div>
         <ul>
-            <li><a href="#" class="active">Overview</a></li>
+            <li><a href="#overview" class="active">Overview</a></li>
             <li><a href="#requirements">Core Requirements</a></li>
             <li><a href="#installation">Installation Guide</a></li>
         </ul>
 
         <div class="section-title">Archetype Catalog</div>
         <ul>
-            <li><a href="#unbowed-1">Unbowed I: Dunmer</a></li>
-            <li><a href="#">Unbowed II (Coming Soon)</a></li>
+            <li><a href="#catalog">Catalog Table</a></li>
+            <li><a href="#dunmer">Unbowed I: Dunmer</a></li>
+            <li><a href="#upcoming">Upcoming Archetypes</a></li>
+        </ul>
+
+        <div class="section-title">Resources</div>
+        <ul>
+            <li><a href="https://nexusmods.com" target="_blank">Nexus Mods Page ↗</a></li>
         </ul>
     </nav>
 
-    <!-- Contenido Central -->
+    <!-- CONTENIDO PRINCIPAL -->
     <main class="main-content">
-        <h1>Unbowed Wiki</h1>
-        <p>Welcome to the official documentation and distribution catalog for the <strong>Unbowed Series</strong> dialogue overhauls.</p>
+        <h1 id="overview">Unbowed Wiki</h1>
+        <p>Welcome to the official documentation and distribution catalog for the <strong>Unbowed Series</strong> dialogue overhauls for Skyrim Special Edition.</p>
+
+        <div class="callout callout-info">
+            <strong>💡 Tip:</strong> Ensure you always have the latest version of the <strong>Unbowed MCM Core Utility</strong> installed prior to loading any archetype packages.
+        </div>
 
         <hr>
 
         <h2 id="requirements">📋 Core Requirements</h2>
         <ul>
-            <li><strong>Skyrim Special Edition</strong> (v1.5.97 / v1.6+)</li>
-            <li><strong>SKSE64</strong></li>
+            <li><strong>Skyrim Special Edition</strong> (v1.5.97 / v1.6+ AE compatible)</li>
+            <li><strong>SKSE64</strong> (Matching your runtime version)</li>
             <li><strong>SkyUI</strong></li>
-            <li><strong>Unbowed MCM Core Utility</strong> <em>(Available on Nexus Mods)</em></li>
+            <li><strong>Unbowed MCM Core Utility</strong> <em>(Required for in-game configuration)</em></li>
         </ul>
 
-        <h2 id="unbowed-1">🗂️ Archetype Catalog</h2>
-        <p>Select an archetype below to review its details and access direct download links:</p>
-        <ul>
-            <li>
-                <strong>Unbowed I: Dunmer Dialogue Overhaul</strong>
-                <ul>
-                    <li><em>Status:</em> Released</li>
-                    <li><em>Download:</em> <a href="TU_ENLACE_DE_GOOGLE_DRIVE" target="_blank">Google Drive Folder</a></li>
-                </ul>
-            </li>
-        </ul>
+        <h2 id="catalog">🗂️ Archetype Catalog</h2>
+        <p>Below is the current list of available dialogue overhaul packages in the Unbowed series:</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Archetype Package</th>
+                    <th>Target Race / Faction</th>
+                    <th>Status</th>
+                    <th>Download Link</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Unbowed I</strong></td>
+                    <td>Dunmer (Dark Elves)</td>
+                    <td><span class="badge badge-released">Released</span></td>
+                    <td><a href="TU_ENLACE_DE_GOOGLE_DRIVE" target="_blank">Google Drive ↗</a></td>
+                </tr>
+                <tr>
+                    <td><strong>Unbowed II</strong></td>
+                    <td>TBA</td>
+                    <td><span class="badge badge-soon">Coming Soon</span></td>
+                    <td><em>N/A</em></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3 id="dunmer">Unbowed I: Dunmer Dialogue Overhaul</h3>
+        <p>Expands NPC interactions, lore-friendly dialogue trees, and unique voice line distributions for Dunmer characters throughout Skyrim and Solstheim.</p>
+        
+        <div class="callout callout-warning">
+            <strong>⚠️ Compatibility Note:</strong> Put <code>Unbowed_Dunmer.esp</code> after any general dialogue overhaul mods in your load order to avoid dialogue topic overrides.
+        </div>
 
         <h2 id="installation">🛠️ Installation Guide</h2>
         <ol>
-            <li>Download and install the <strong>Unbowed MCM Core Utility</strong> from Nexus Mods using your mod manager (MO2 / Vortex).</li>
-            <li>Download the desired archetype <code>.7z</code> package from the catalog link above.</li>
-            <li>Install the <code>.7z</code> package as a normal mod in your mod manager and enable it.</li>
+            <li>Download and install the <strong>Unbowed MCM Core Utility</strong> using your preferred mod manager (Mod Organizer 2 / Vortex).</li>
+            <li>Download the desired archetype package (<code>.7z</code>) from the catalog link.</li>
+            <li>Install the <code>.7z</code> archive as a mod in MO2/Vortex and activate it.</li>
+            <li>Run SKSE64 and verify settings via the MCM menu in-game.</li>
         </ol>
     </main>
 
