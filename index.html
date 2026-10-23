@@ -90,6 +90,11 @@
             border-bottom: 1px solid #e1e4e8;
             padding-bottom: 6px;
         }
+        h3 {
+            font-size: 18px;
+            margin-top: 24px;
+            margin-bottom: 10px;
+        }
         p {
             line-height: 1.6;
             margin-bottom: 16px;
@@ -226,7 +231,7 @@
         <ul>
             <li><a href="#catalog">Catalog Table</a></li>
             <li><a href="#dunmer">Unbowed I: Dunmer</a></li>
-            <li><a href="#upcoming">Upcoming Archetypes</a></li>
+            <li><a href="#catalog">Upcoming Archetypes</a></li>
         </ul>
 
         <div class="section-title">Credits & Usage</div>
@@ -313,21 +318,22 @@
         </ul>
 
         <h2 id="installation">🛠️ Installation Guide</h2>
+
+        <div class="callout callout-danger">
+            <strong>🚫 Mod Manager Requirement:</strong> 
+            Unbowed is <strong>NOT compatible with Vortex</strong> or any Nexus-derived mod management software. 
+            You <strong>must use Mod Organizer 2 (MO2)</strong> to install and deploy this mod family.
+        </div>
+
         <ol>
-            <li>Download and install the <strong>Unbowed MCM Core Utility</strong> using your preferred mod manager (Mod Organizer 2 / Vortex).</li>
-            <li>Download the desired archetype package (<code>.7z</code>) from the catalog link.</li>
-            <li>Install the <code>.7z</code> archive as a mod in MO2 and activate it.</li>
-            <li>Run SKSE64 and verify settings via the MCM menu in-game.</li>
+            <li>Download and install the <strong>Unbowed MCM Core Utility</strong> via Mod Organizer 2.</li>
+            <li>Download the desired archetype package (<code>.7z</code>) from the catalog table above.</li>
+            <li>Install the <code>.7z</code> archive into MO2 and activate it in your mod list.</li>
+            <li>Run Skyrim via SKSE64 and verify your configuration in the MCM menu in-game.</li>
         </ol>
 
         <div class="callout callout-warning">
-            <strong>⚠️ Compatibility Note:</strong> Put <code>Unbowed_Dunmer.esp</code> after any general dialogue overhaul mods in your load order to avoid dialogue topic overrides.
-        </div>
-
-        <div class="callout callout-danger">
-            <strong>🚫 Compatibility Warning:</strong> 
-            Unbowed is <strong>NOT compatible with Vortex</strong> or any Nexus-derived mod manager. 
-            You <strong>must use Mod Organizer 2 (MO2)</strong>.
+            <strong>⚠️ Load Order Note:</strong> Place <code>Unbowed_Dunmer.esp</code> after any general dialogue overhaul mods in your load order to avoid topic overrides.
         </div>
 
         <h2 id="usage-copyright">📜 Usage & Copyright Policy</h2>
